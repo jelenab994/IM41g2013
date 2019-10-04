@@ -1,0 +1,66 @@
+package rpp.ctrls;
+
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import rpp.jpa.Grupa;
+import rpp.reps.GrupaRepository;
+
+@CrossOrigin
+@RestController
+public class GrupaRestController {
+
+	@Autowired
+	private GrupaRepository grupaRepository;
+	
+	// vraca sve grupe u JSON formatu
+	@GetMapping("grupa")
+	public Collection<Grupa> getGrupe() {
+		return grupaRepository.findAll();
+	}
+	
+	// vraca sve grupe po id-u JSON formatu
+	@GetMapping("grupa/{id}")
+	public Grupa getGrupa(@PathVariable("id") Integer id) {
+		return grupaRepository.getOne(id);
+	}
+	
+	// delete
+	@DeleteMapping("grupa/{id}")
+	public ResponseEntity<Grupa> deleteGrupa(@PathVariable("id") Integer id) {
+		if (!grupaRepository.existsById(id))
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		grupaRepository.deleteById(id);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	// insert
+	@PostMapping("grupa")
+	public ResponseEntity<Grupa> insertGrupa(@RequestBody Grupa grupa) {
+		if (!grupaRepository.existsById(grupa.getId())) {
+			grupaRepository.save(grupa);
+			return new ResponseEntity<>(HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.CONFLICT);
+	}
+	
+	// update
+	@PutMapping("grupa")
+	public ResponseEntity<Grupa> updateGrupa(@RequestBody Grupa grupa) {
+		if (!grupaRepository.existsById(grupa.getId()))
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		grupaRepository.save(grupa);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+}

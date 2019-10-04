@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;BackendMASTER&apos;&#x0D;&#x0A;- Original project: &apos;BackendMASTER&apos;&#x0D;&#x0A;- Original element: &apos;master.reps.VehicleRepositoryPageable.java&apos;" description="Delete element" element1="/src\/main\/java&lt;master.reps{VehicleRepositoryPageable.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1566811317536" subPackages="false" version="1.0"/>
+</session>

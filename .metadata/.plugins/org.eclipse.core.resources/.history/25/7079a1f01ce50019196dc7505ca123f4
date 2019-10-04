@@ -1,0 +1,19 @@
+package rpp.ctrls;
+
+import java.util.Collection;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import rpp.jpa.Grupa;
+
+@RestController
+public class GrupaRestController {
+
+	// vraca sve grupe u JSON formatu
+	@GetMapping("grupa")
+	public Collection<Grupa> getGrupa() {
+		return grupaRepository.findAll();
+	}
+	
+}

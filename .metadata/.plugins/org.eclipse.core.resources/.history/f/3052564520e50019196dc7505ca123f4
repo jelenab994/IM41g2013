@@ -1,0 +1,9 @@
+package rpp.reps;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import rpp.jpa.Grupa;
+
+public interface GrupaRepository extends JpaRepository<Grupa, Integer> {
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BackendRPP/src/main/resources/soapUI/BackendRVA5-SoapUI-soapui-project.xml.url&apos; to &apos;BackendRPP.xml.url&apos;" description="Rename resource &apos;BackendRVA5-SoapUI-soapui-project.xml.url&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/soapUI/BackendRVA5-SoapUI-soapui-project.xml.url" name="BackendRPP.xml.url" stamp="1570192647762" updateReferences="true"/>
+</session>

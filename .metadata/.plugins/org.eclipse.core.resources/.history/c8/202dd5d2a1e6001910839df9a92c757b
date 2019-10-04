@@ -1,0 +1,5 @@
+package rpp.reps;
+
+public interface SmerRepository {
+
+}
